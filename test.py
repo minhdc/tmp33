@@ -19,4 +19,4 @@ for each_part in splitted_part:
 with open("wmo_number_as_dict.txt","r") as wmo_file:
     wmo_dict = json.loads(wmo_file.read())
 
-print(wmo_dict['46854'])
+print(wmo_dict['46811'])

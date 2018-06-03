@@ -1,6 +1,18 @@
 import json
 
 
+'''
+    Part A - mandatory level below 100mb
+    TTAA YYGGI IIiii 99PPP TTTDD dddff 00HHH TTTDD dddff
+    92HHH TTTDD dddff 85HHH TTTDD dddff 70HHH TTTDD dddff 50HHH
+    TTTDD dddff 40HHH TTTDD dddff 30HHH TTTDD dddff 25HHH TTTDD 
+    dddff 20HHH TTTDD dddff 15HHH TTTDD dddff 10HHH TTTDD dddff
+    88PPP TTTDD dddff 77PPP dddff...
+
+
+'''
+
+
 def process_seq_a1(seq_a1_as_a_list):
     I = [100,200,300,400,500,700,850,1000]
     print("Ngay phat bao :",seq_a1_as_a_list[1][0:2])
@@ -43,7 +55,18 @@ def process_tttdd(input_tttdd):
 
 
 def process_dddff(input_dddff):
-    pass
+    wind_direction = int(input_dddff[0:3])
+    wind_speed = int(input_dddff[3:])
+
+    if input_dddff[2] == '1' or input_dddff[2] == '6':
+        wind_speed = wind_speed + 100
+    if input_dddff[2] == '2' or input_dddff[2] == '7':
+        wind_speed = wind_speed + 200
+    else:
+        if (wind_direction// 5 ) % 2 == 0:
+            wind_speed = wind_speed + (wind_direction - (5 * (wind_direction//5)))*100
+
+    return[wind_direction,wind_speed]        
 
 
 def check_missing(input_text,length):
