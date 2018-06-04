@@ -32,3 +32,12 @@ def get_sub_sequence_in_a(input_a_part_as_list):
 
     return list_of_sub_seq
 
+
+def count_sub_sequence_in_a2(seq_a2_as_a_list):
+    if len(seq_a2_as_a_list) % 3 == 0:
+        return (len(seq_a2_as_a_list) % 3)
+    else:
+        return None
+
+
+        
